@@ -49,3 +49,6 @@ window.addEventListener('load', () => {
     }
 
 })
+
+let nombre = prompt("INGRESA TU NOMBRE");
+alert("BIENVENIDOS A NUESTRO SITIO WEB " + nombre);
