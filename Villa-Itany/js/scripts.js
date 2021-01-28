@@ -50,5 +50,3 @@ window.addEventListener('load', () => {
 
 })
 
-let nombre = prompt("INGRESA TU NOMBRE");
-document.write("BIENVENIDO A NUESTRO SITIO WEB " + nombre);
