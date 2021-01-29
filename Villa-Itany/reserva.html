@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
   
 </head>
-<body class="bg-light">
+<body>
 
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light" >
@@ -99,16 +99,20 @@
 
     <div class="card">
           
-       <div class="alert card text-white bg-secondary mb-3" role="alert">
-        <h1 class="alert-heading" style="text-align: center;"><strong>V  I  L  L  A   -   I  T  A  N  Y </strong></h1>
-        <h2 class="alert-heading" style="text-align: center;"><strong>R  E  G  I  S  T  R  O  S  -  D  E  -  R  E  S  E  R  V  A  S !</strong></h2>
-        <p style="text-align: center;"><strong>B I E N V E N I D O S aca podras tener una informacion detalladamente de todo el registro de reservas.</strong> </p>
+       <div class="alert card  bg-light mb-3" role="alert">
+        <div class="content" style="text-align: center;">
+          <img src="img/14.jpg" style="height: 80px;"> 
+          <h1 class="alert-heading" style="text-align: center;"><strong>V  I  L  L  A   -   I  T  A  N  Y </strong></h1>
+          <br>
+        </div>
+
+       <p style="text-align: center;"><strong>B I E N V E N I D O S aca podras tener una informacion detalladamente de todo el registro de reservas.</strong> </p>
         <hr>
-        <p style="text-align: center;" class="mb-0"><strong>Informacion de la reserva.</strong></p>
+        <p style="text-align: center;" class="mb-0"><strong><b>Informacion de la reserva.</b></strong></p>
     </div>
   
 
-        <div class="card-body">
+        <div class="card-body  bg-light">
           <form>
 
             <div class="row">
@@ -172,53 +176,21 @@
 
             <div class="row">
                   
-                  <div class="col-12 col-sm-3">
-                    <button type="submit" class="btn btn-outline-info form-control" onclick="validate()"> <strong> ENVIAR </strong> </button>
+                  <div class="col-12 col-sm">
+                    <button type="submit" class="btn btn-outline-info form-control" onclick="validate()"> <strong> RESERVA </strong> </button>
+                  </div>
+                  
+                  <br>
+
+                  <div id="form" class="col-12 col-sm">
+                    <button type="submit" class="btn btn-outline-info form-control" onclick="validateone()"><strong> CANCELAR RESERVA </strong> </button>
                   </div>
 
-
-                   <div id="form" class="col-12 col-sm-3">
-                    <button type="submit" class="btn btn-outline-info form-control" onclick="validateone()"><strong> MOSTRAR </strong> </button>
-                   </div>
-
-                   <div id="form" class="col-12 col-sm-3">
-                    <button type="submit" class="btn btn-outline-info form-control" onclick="validateone()"><strong> ELIMINAR </strong> </button>
-                   </div>
-
-                   <div id="form" class="col-12 col-sm-3">
-                    <button type="submit" class="btn btn-outline-info form-control" onclick="validateone()"><strong> MODIFICAR </strong> </button>
-                   </div>
-
-                   
-
-                   
             </div>
 
             </form>
         </div>
-        <div class="alert card text-white bg-secondary mb-3">
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                    <th>Id Reserva</th>
-                    <th>Cedula</th>
-                    <th>Nombres</th>
-                    <th>Apellidos</th>
-                    <th>Edad</th>
-                    <th>Correo</th>
-                    <th>T&eacute;lefono</th>
-                    <th>Fecha<br>Ingreso</th>
-                    <th>Fecha<br>Salida</th>
-                    
-                    
-                    
-                    </thead>
-                    <tbody id="tblBody">
-
-                    </tbody>
-                </table>
-            </div>
-        </div>
+       
     </div>
 </div>
 
