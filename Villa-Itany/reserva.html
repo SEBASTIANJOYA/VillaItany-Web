@@ -6,76 +6,55 @@
     <title>Reservas</title>
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="./js/scripts.js">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
-  
+
 </head>
 <body>
 
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" >
-
-        <div class="container-fluid text-align" style="text-align: center;">
-              <div class="col-sm col-md col-lg-4">
-                  <img src="img/14.jpg" style="height: 50px;">
-                  <a class="navbar-brand"  href="#"><strong> VILLA ITANY </strong></a>
-              </div>
-              
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <div class="col-sm col-md col-lg">
-                  <li class="nav-item">
-                    <img src="img/30.svg" alt=""> 
-                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                  </li>
-                </div>
-
-                <div class="col-sm col-md col-lg">
-                  <li class="nav-item">
-                    <img src="img/29.svg" alt=""> 
-                    <a class="nav-link" href="galeria.html">Galeria</a>
-                  </li>
-                </div>
-
-                <div class="col-sm col-md col-lg">
-                  <li class="nav-item ">
-                    <img src="img/31.svg" alt=""> 
-                    <a class="nav-link" href="#">Habitaciones</a>
-                  </li>
-                </div>
-               
-                  
-                 
-                <div class="col-sm col-md col-lg">
-                  <li class="nav-item">
-
-                     <img src="img/27.svg" alt="">     
-                     <a class="nav-link" href="ubicacion.html"> Ubicacion </a>
-                  </li>
-                </div>
-
-                <div class="col-sm col-md col-lg">
-                  <li class="nav-item">
-                     <img src="img/28.svg" alt="">
-                     <a class="nav-link"> Contactos </a>
-                  </li>
-                </div>
-                </ul>
-
-              
-                <div class="col-sm col-md col-lg-4">
-                  <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                  </form>
-                </div>
-            </div>
+  <header class="menu">
         
-        </div>
-    </nav>
-</header>
+    <nav class="navbar sticky-top navbar-expand-sm navbar-light bg-light  " >
+      
+      <div class="col-sm col-md col-lg-4" style="padding-left: 100px;" >
+        <img src="img/14.jpg" style="height: 50px;">
+        <a class="navbar-brand"  href="#"><strong> VILLA ITANY </strong></a>
+      </div>
+    
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">        
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end "style="text-align: center; " id="navbarMenu">
+          <ul class="navbar-nav ml-auto "style="font-size:18px;text-align: center; ">
+            
+            <a class="nav-link" href="#"style="padding:10px 20px; color:black;" >Home</a>
+            <img src="img/30.svg" alt=""> 
+                 
+            <a class="nav-link" href="" style="padding:10px 20px;color:black;">Galeria</a>
+            <img src="img/29.svg" alt=""> 
+                    
+            <a class="nav-link" href=""style="padding:10px 20px;color:black;" >Habitaciones</a>
+            <img src="img/31.svg" alt=""> 
+                    
+            <a class="nav-link" href=""style="padding:10px 20px;color:black;">Ubicacion</a>
+            <img src="img/27.svg" alt="">     
+                    
+            <a class="nav-link" href="./reserva.html"style="padding:10px 20px;color:black;">Reservas</a>
 
+            <a class="nav-link" href=""style="padding:10px 20px;color:black;">Contacto</a>
+            <img src="img/28.svg" alt="">
+            
+          </ul>
+         
+           
+          
+      </div>
+    </div>
+    
+  </nav>
+
+
+  
+</header>
 
 
 <div class="slider">
@@ -113,60 +92,71 @@
   
 
         <div class="card-body  bg-light">
-          <form>
+          <form id="formulario">
 
             <div class="row">
-                <div class="col-12 col-sm-6 ">
+
+                <div class="col-12 col-sm">
                     <label for="name">Id Reserva</label>
-                    <input type="text" class="form-control" placeholder="" aria-label="Cedula">
+                    <input id="id" name="id" class="form-control" placeholder="" onchange="return idReserva()" aria-label="" readonly>
                 </div>
+
+                <div class="col-12 col-sm">
+                  <label for="date">Fecha de Nacimiento</label>
+                  <input type="date" id="dateBirthday" class="form-control" onchange="calcAge()" required>
+                </div>
+
             </div>
 
             <div class="row">
                     
                     <div class="col-12 col-sm">
                         <label for="name">Cedula</label>
-                        <input type="text" class="form-control" placeholder="" aria-label="Cedula">
+                        <input type="text" class="form-control" placeholder="" aria-label="Cedula" onkeypress="return onlyNums(event)" required>
                     </div>
+
                     <div class="col-12 col-sm">
                       <label for="name">Nombres</label>
-                      <input type="text" class="form-control" placeholder="" aria-label="Nombres">
+                      <input id="nombres-reserva" type="text"  class="form-control" placeholder="" aria-label="Nombres" required>
                     </div>
+
                     <div class="col-12 col-sm">
-                      <label for="name">Apellidos</label>
-                      <input type="text" class="form-control" placeholder="" aria-label="Apellidos">
+                      <label for="apellidos">Apellidos</label>
+                      <input type="text" class="form-control" placeholder="" aria-label="Apellidos" required>
                     </div>
             </div>
 
             <div class="row">
                     <div class="col-12 col-sm">
-                        <label for="name">Edad</label>
-                        <input type="text" class="form-control" placeholder="" aria-label="Cedula">
+                        <label for="age">Edad</label>
+                        <input id="edad" type="text" class="form-control" placeholder="" aria-label="Edad" readonly>
                       </div>
+
                     <div class="col-12 col-sm">
-                      <label for="name">Telefono</label>
-                      <input type="text" class="form-control" placeholder="" aria-label="Nombres">
+                      <label for="telefono">Telefono</label>
+                      <input type="text" class="form-control" placeholder="" onkeypress="return onlyNums(event)" aria-label="Nombres">
                     </div>
+
                     <div class="col-12 col-sm">
-                      <label for="name">Correo Electrónico</label>
-                      <input type="text" class="form-control" placeholder="" aria-label="Apellidos">
+                      <label for="email">Correo Electrónico</label>
+                      <input type="email" class="form-control" placeholder="" aria-label="Correo">
                     </div>
             </div>
 
             <div class="row">
                 <div class="col-12 col-sm">
                     <label for="dateAdmission">Fecha de Ingreso</label>
-                    <input type="date" id="dateAdmission" class="form-control" required>
+                    <input type="date" id="dateingreso" class="form-control" onchange="calcMontoPagar()" required>
                   </div>
 
                 <div class="col-12 col-sm">
-                    <label for="dateAdmission">Fecha de Ingreso</label>
-                    <input type="date" id="dateAdmission" class="form-control" required>
+                    <label for="dateAdmission">Fecha de Salida</label>
+                    <input type="date" id="datesalida" class="form-control" onchange="calcMontoPagar()" required>
                 </div>
 
                 <div class="col-12 col-sm">
                     <label for="name">Total a Pagar</label>
-                    <input type="text" class="form-control" placeholder="" aria-label="">
+                    <input id="total" type="text" class="form-control" placeholder="" aria-label="" readonly>
                   </div>
 
                
@@ -177,13 +167,13 @@
             <div class="row">
                   
                   <div class="col-12 col-sm">
-                    <button type="submit" class="btn btn-outline-info form-control" onclick="validate()"> <strong> RESERVA </strong> </button>
+                    <button type="submit" class="btn btn-outline-info form-control" onchange="idReserva()"> <strong> RESERVA </strong> </button>
                   </div>
                   
                   <br>
 
                   <div id="form" class="col-12 col-sm">
-                    <button type="submit" class="btn btn-outline-info form-control" onclick="validateone()"><strong> CANCELAR RESERVA </strong> </button>
+                    <button type="submit" class="btn btn-outline-info form-control" onclick=""><strong> CANCELAR RESERVA </strong> </button>
                   </div>
 
             </div>
